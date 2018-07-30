@@ -11,6 +11,7 @@ router.get('/', (request, response ) => {
   //get relevant data
   // send data
   knex('teams')
+  .orderBy('teamName', 'desc')
   .then(team =>{
     response.json(team)
   })
